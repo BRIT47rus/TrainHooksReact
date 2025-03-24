@@ -1,9 +1,10 @@
 import "./App.css";
-import { FormUser } from "./classVsFunction";
+import { TestCastomHooks } from "./CastomHoks/TestCastomHooks";
 function App() {
   return (
     <div className="App">
-      <FormUser />
+    <TestCastomHooks />
+    <TestCastomHooks delta={5} initialState={10}/>
     </div>
   );
 }
