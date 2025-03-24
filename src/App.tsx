@@ -1,12 +1,11 @@
-import { PracticeUserInputt} from './HookUseState'
-import './App.css'
+import "./App.css";
+import { FormUser } from "./classVsFunction";
 function App() {
-
   return (
-    <div className='App'>
-      <PracticeUserInputt/>
+    <div className="App">
+      <FormUser />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
