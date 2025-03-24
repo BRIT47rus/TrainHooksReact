@@ -1,36 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import { useMergeState } from "../CastomHoks";
+import { FormInput } from "./FormInput";
 
-export type FormInputProps = {
-  name: string;
-  value: string | number;
-  label: string;
-  onChange?: (value: string | number) => void;
-  type?: string;
-};
-
-const FormInput = ({
-  label,
-  onChange,
-  value,
-  type = "text",
-  name,
-}: FormInputProps) => {
-  return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <input
-        type={type}
-        value={value}
-        name={name}
-        onChange={(e) => {
-          onChange && onChange(e.target.value);
-        }}
-      />
-    </div>
-  );
-};
-
-type Inite_props = {
+export type Inite_props = {
   name: string;
   age: number;
 };
@@ -38,13 +10,13 @@ type Inite_props = {
 const INITIAL_STATE: Inite_props[] = [];
 
 export const FormUser = () => {
-  const [state, setState] = useState(INITIAL_STATE);
+  const [state, setState] = useMergeState(INITIAL_STATE);
   const [name, setName] = useState("");
   const [age, setAge] = useState(0);
 
   const addNewUser = (newUser: Inite_props) => {
     if (newUser.name && newUser.age) {
-      setState((prevState) => [...prevState, newUser]);
+      setState(newUser);
       setName("");
       setAge(0);
     }

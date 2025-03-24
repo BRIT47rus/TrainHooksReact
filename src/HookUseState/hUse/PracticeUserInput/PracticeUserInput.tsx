@@ -12,7 +12,7 @@ export const PracticeUserInputt = () => {
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
-    setValue((prev) => (prev = e.target.value));
+    setValue( e.target.value);
 
     setIsDisable(false)
  

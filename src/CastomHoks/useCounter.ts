@@ -3,7 +3,7 @@ export type CounterProps = {
   initialState?:number;
   delta?:number
 }
-export const useCounter =<CounterProps> ( initialState = 0, delta = 1):[number,()=>void,()=>void] => {
+export const useCounter = ( {initialState = 0, delta = 1}:CounterProps):[number,()=>void,()=>void] => {
   const [state, setState] = useState(initialState);
 
   const increment = () => {
