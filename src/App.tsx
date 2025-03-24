@@ -1,11 +1,11 @@
-import {HookUseState} from './HookUseState'
-
+import { PracticeUserInputt} from './HookUseState'
+import './App.css'
 function App() {
 
   return (
-    <>
-    <HookUseState/>
-    </>
+    <div className='App'>
+      <PracticeUserInputt/>
+    </div>
   )
 }
 

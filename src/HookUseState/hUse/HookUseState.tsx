@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export const HookUseState = () => {
-    const [showClicks, setShowClicks] = useState(false);
-    const [clicks, setClicks] = useState(0);
-    const [clicks2, setClicks2] = useState(0);
+  const [showClicks, setShowClicks] = useState(false);
+  const [clicks, setClicks] = useState(0);
+  const [clicks2, setClicks2] = useState(0);
 
   const onClick = () => {
     setTimeout(() => {
@@ -12,7 +12,7 @@ export const HookUseState = () => {
   };
   const onClick2 = () => {
     setTimeout(() => {
-        setClicks2(clicks2 + 1);
+      setClicks2(clicks2 + 1);
     }, 1000);
   };
 
