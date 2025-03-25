@@ -1,9 +1,11 @@
 import "./App.css";
-import { FormUser } from "./classVsFunction";
+import { TablePow } from "./lazyUseState";
+
+
 function App() {
   return (
     <div className="App">
-<FormUser />
+<TablePow/>
     </div>
   );
 }
