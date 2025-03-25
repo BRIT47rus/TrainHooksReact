@@ -1,11 +1,11 @@
 import "./App.css";
-import { TablePow } from "./lazyUseState";
+import { Calc } from "./Calculator";
 
 
 function App() {
   return (
     <div className="App">
-<TablePow/>
+<Calc/>
     </div>
   );
 }
