@@ -1,10 +1,10 @@
 import "./App.css";
-import { CountUE } from "./useefecHook";
+import { Game } from "./useefecHook";
 
 function App() {
   return (
     <div>
-      <CountUE />
+      <Game/>
     </div>
   );
 }
