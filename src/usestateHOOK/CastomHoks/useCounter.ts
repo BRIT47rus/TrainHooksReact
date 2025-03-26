@@ -1,9 +1,8 @@
 import { useState } from "react";
-export type CounterProps = {
-  initialState?:number;
-  delta?:number
-}
-export const useCounter = ( {initialState = 0, delta = 1}:CounterProps):[number,()=>void,()=>void] => {
+export type CounterProps = [state:number,increment?:()=>void,
+  decrement?:()=>void]
+
+export const useCounter = ( initialState:number = 0, delta:number = 1):CounterProps=> {
   const [state, setState] = useState(initialState);
 
   const increment = () => {
