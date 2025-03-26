@@ -1,5 +1,5 @@
 
-export  const onChange = (setter:(value: string) => void) => {
+export  const onChange = (setter:(value: number) => void) => {
 
     return (event: React.ChangeEvent<HTMLInputElement>) => {
         const { value } = event.target;
