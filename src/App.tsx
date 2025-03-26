@@ -1,10 +1,9 @@
 import "./App.css";
-import { Game } from "./useefecHook";
-
+import { RenderCount } from "./imperativeStyle";
 function App() {
   return (
     <div>
-      <Game/>
+      <RenderCount/>
     </div>
   );
 }
