@@ -1,10 +1,9 @@
-
-import {ExampleHOC}from './Hoc/'
+import { ExampleHOC } from "./Hoc/";
 import "./App.css";
 function App() {
   return (
     <div>
-<ExampleHOC/>
+      <ExampleHOC />
     </div>
   );
 }
