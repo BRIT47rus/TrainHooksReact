@@ -1,9 +1,10 @@
+
+import {ExampleHOC}from './Hoc/'
 import "./App.css";
-import { ComponentPint } from "./PinInput";
 function App() {
   return (
     <div>
-  <ComponentPint/>
+<ExampleHOC/>
     </div>
   );
 }
