@@ -1,9 +1,9 @@
 import "./App.css";
-import { RenderCount } from "./imperativeStyle";
+import { ComponentPint } from "./PinInput";
 function App() {
   return (
     <div>
-      <RenderCount/>
+  <ComponentPint/>
     </div>
   );
 }
