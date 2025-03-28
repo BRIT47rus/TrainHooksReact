@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { useTheme } from "../../../ThemeContex";
 
 export interface UserObj{
            name:string;
@@ -12,8 +13,10 @@ type UserProps={
 user:UserObj
 }
 export const User:FC<UserProps> =({user})=>{
+
+    const {theme}=useTheme();
     return(
-        <div>
+        <div style={{background:theme}}>
             <span>{user.name}</span><br />
             <span>{user.age}</span><br />
             <div>

@@ -1,11 +1,11 @@
 
  export enum ThemeColor{
-    RED='red',
-    BLUE='blue',
-    YELLOW='yellow'
+    BLUE = 'blue',
+    RED = 'red',
+    GREEN = 'green',
 }
 
-export const changeTheme =()=>{
+export const changeTheme =({theme}:ThemeColor)=>{
 
 
     return
