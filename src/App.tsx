@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { ReducerExample1 } from "./ReducerExample";
+import { ContactBar } from "./ReducerExample/ContactBar";
 // const items = [
 //   {id:1,name:'vova'},
 //   {id:2,name:'peta'},
@@ -11,7 +11,7 @@ import { ReducerExample1 } from "./ReducerExample";
 function App() {
   return (
     <div>
-<ReducerExample1/>
+<ContactBar/>
     </div>
   );
 }

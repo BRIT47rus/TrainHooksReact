@@ -1,6 +1,6 @@
 import { ContactType, initial_state, StateContacts } from "../ContactProvider/ContactProvider";
 
-const actions = {
+export const actions = {
     SELECT_CONTACTS: 'select',
     REMOVE_CONTACT: 'remove',
     REFLESH_CONTACTS: 'reflesh',

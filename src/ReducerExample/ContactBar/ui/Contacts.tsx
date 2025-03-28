@@ -1,11 +1,40 @@
+import { useContact } from "../ContactProvider/ContactProvider";
 
-export const Contacts =()=>{
+export const Contacts = () => {
+  const [state, dispatch] = useContact();
+  const { contacts } = state;
+const selected = sel
+  return (
+    <div
+      style={{
+        display: "flex",
+        backgroundColor: "grey",
+        borderRadius: 20,
+        overflow: "hidden",
+      }}
+    >
+      {contacts.map((contact) => (
+        <div key={contact.id}
+        
+        onClick={()=>dispatch({type:"select",payload:{id:contact.id}})}
 
 
-
-    return(
-        <div>
-            
+        >
+          <div>
+            <img
+              src={contact.avatar}
+              alt=""
+              style={{
+                width: 300,
+                height: 300,
+              }}
+            />
+          </div>
+          <span>
+            {contact.name} {contact.lastname}
+          </span>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
