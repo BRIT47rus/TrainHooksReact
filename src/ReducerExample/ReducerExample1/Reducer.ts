@@ -40,11 +40,9 @@ export const reducer = (state: StateType, action: ActionType): StateType => {
                 count: state.count + 2
             }
         case Types.CLEAR:
-            return {
-                ...state,
-                ...initial_state,
-                name: Types.CLEAR,
-            }
+            return initial_state
+                
+            
         default:
             console.log('нет такого редусера');
             return state
