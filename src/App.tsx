@@ -1,5 +1,6 @@
 import "./App.css";
-import {UserBar} from  './ContexExample/'
+
+import { ReducerExample1 } from "./ReducerExample";
 // const items = [
 //   {id:1,name:'vova'},
 //   {id:2,name:'peta'},
@@ -10,7 +11,7 @@ import {UserBar} from  './ContexExample/'
 function App() {
   return (
     <div>
-       <UserBar/>
+<ReducerExample1/>
     </div>
   );
 }
