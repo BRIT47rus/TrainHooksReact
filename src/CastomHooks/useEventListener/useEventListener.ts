@@ -1,7 +1,7 @@
 import { RefObject, useEffect, useRef } from "react"
-
+export type EventHandler = Event | MouseEvent
 type SuportedElement = Window | HTMLElement | Document | null;
-type HandlerType = (e: Event) => void
+type HandlerType = (e:EventHandler ) => void
 
 export const useEventListener = (eventName: string, handler: HandlerType, element: SuportedElement = window) => {
     const savedHandler: RefObject<HandlerType | undefined> = useRef(undefined);
@@ -13,7 +13,7 @@ export const useEventListener = (eventName: string, handler: HandlerType, elemen
         if (!isSupportedElement) {
             throw new Error('Element is not supported listen' + element)
         }
-        const evenetListener = (event: Event) => {
+        const evenetListener = (event: EventHandler) => {
             if (savedHandler.current) {
                 savedHandler?.current(event)
             }

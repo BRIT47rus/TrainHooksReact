@@ -1,5 +1,6 @@
 import "./App.css";
-import { ToogleComponent } from "./DebugValue";
+import { FollowCursor } from "./FollowCursor/FollowCursor/FollowCursor";
+
 
 
 // const items = [
@@ -12,7 +13,7 @@ import { ToogleComponent } from "./DebugValue";
 function App() {
   return (
     <div>
-<ToogleComponent/>
+<FollowCursor/>
     </div>
   );
 }
