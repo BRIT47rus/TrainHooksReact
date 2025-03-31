@@ -1,6 +1,6 @@
 import "./App.css";
+import { ToogleComponent } from "./DebugValue";
 
-import { ContactBar } from "./ReducerExample/ContactBar";
 // const items = [
 //   {id:1,name:'vova'},
 //   {id:2,name:'peta'},
@@ -11,7 +11,7 @@ import { ContactBar } from "./ReducerExample/ContactBar";
 function App() {
   return (
     <div>
-<ContactBar/>
+      <ToogleComponent/>
     </div>
   );
 }

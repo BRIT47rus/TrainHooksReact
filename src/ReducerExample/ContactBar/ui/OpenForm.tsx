@@ -19,9 +19,9 @@ export const OpenForm = () => {
   const openStyle = {
     position: "absolute",
     top: "50%",
-    left: "25%",
-        border:"1px solid red"
-
+  
+    border: "1px solid red",
+    background:"red"
   };
   const addContact = () => {
     dispatch({
@@ -33,16 +33,19 @@ export const OpenForm = () => {
         id: v4(),
       },
     });
-    setNameValue('')
-    setSecondaryValue('')
-    setIsopen(false)
+    setNameValue("");
+    setSecondaryValue("");
+    setIsopen(false);
   };
 
   return (
     <div>
-      <button onClick={() => setIsopen((prev) => !prev)}>Добавить</button>
+      {!isopen && (
+        <button onClick={() => setIsopen((prev) => !prev)}>Добавить</button>
+      )}
       {isopen && (
-        <form style={openStyle 
+        <form style={openStyle
+      
         } onSubmit={(e) => e.preventDefault()}>
           <input
             type="text"
