@@ -2,8 +2,8 @@ import { useContact } from "../ContactProvider/ContactProvider";
 
 export const Contacts = () => {
   const [state, dispatch] = useContact();
-  const { contacts } = state;
-const selected = sel
+  const { contacts, selectedId } = state;
+
   return (
     <div
       style={{
@@ -14,11 +14,12 @@ const selected = sel
       }}
     >
       {contacts.map((contact) => (
-        <div key={contact.id}
-        
-        onClick={()=>dispatch({type:"select",payload:{id:contact.id}})}
-
-
+        <div
+          style={selectedId === contact.id ? { background: "red" } : {}}
+          key={contact.id}
+          onClick={() =>
+            dispatch({ type: "select", payload: { id: contact.id } })
+          }
         >
           <div>
             <img

@@ -1,4 +1,5 @@
 import { useContact } from "../ContactProvider/ContactProvider";
+import { OpenForm } from "./OpenForm";
 
 export const ContactToolbar = () => {
   const [state, dispatch] = useContact();
@@ -8,15 +9,17 @@ export const ContactToolbar = () => {
 
   const removeContact = () => {
     const id = state.selectedId || null;
-    if (id) dispatch({ type: "remove", payload:{ id }});
+    if (id) dispatch({ type: "remove", payload: { id } });
     return;
   };
 
-  const addContact = () => {};
+  //добавление
+
+
   return (
     <div>
-      <button onClick={addContact}>Add</button>
-      <button onClick={clearContacts}>reflesh</button>
+        <button onClick={clearContacts}>reflesh</button>
+      <OpenForm />
 
       {state.selectedId && <button onClick={removeContact}>Remove</button>}
     </div>
