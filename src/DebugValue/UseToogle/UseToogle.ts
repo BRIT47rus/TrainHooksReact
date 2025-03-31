@@ -6,7 +6,7 @@ export const useToogle = (value: boolean): [boolean, () => void] => {
     useDebugValue(toogle)
     const toggleFN = useCallback(() => {
         setToggle(prev => !prev)
-    }, [])
+    }, [toogle])
 
 
     return [toogle, toggleFN]
