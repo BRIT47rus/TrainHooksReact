@@ -1,10 +1,13 @@
-import { useDebugValue, useState } from "react"
+import { useCallback, useDebugValue, useState } from "react"
 
 
-export const useToogle = (value: boolean):[boolean,()=>void] => {
+export const useToogle = (value: boolean): [boolean, () => void] => {
     const [toogle, setToggle] = useState(value || false);
     useDebugValue(toogle)
-    const toggleFN = () =>setToggle(prev => !prev)
-    
+    const toggleFN = useCallback(() => {
+        setToggle(prev => !prev)
+    }, [])
+
+
     return [toogle, toggleFN]
 }
