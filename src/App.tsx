@@ -1,5 +1,6 @@
 import "./App.css";
-import { ToogleComponent } from "./DebugValue";
+import { ExampleFactory } from "./hooksFactory";
+
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +12,7 @@ import { ToogleComponent } from "./DebugValue";
 function App() {
   return (
     <div>
-      <ToogleComponent/>
+<ExampleFactory/>
     </div>
   );
 }
