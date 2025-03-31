@@ -1,7 +1,5 @@
 import "./App.css";
-import { FollowCursor } from "./FollowCursor/FollowCursor/FollowCursor";
-
-
+import { TestChangesProps } from "./CastomHooks";
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -13,7 +11,7 @@ import { FollowCursor } from "./FollowCursor/FollowCursor/FollowCursor";
 function App() {
   return (
     <div>
-<FollowCursor/>
+      <TestChangesProps initcount={0} inittext="Нет текста" />
     </div>
   );
 }
