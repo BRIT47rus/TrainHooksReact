@@ -1,12 +1,15 @@
 import { FC } from "react";
-import { useToogle } from "../UseToogle/UseToogle"
+import { useToogle } from "../../CastomHooks";
+// import { useToogle } from "../UseToogle/UseToogle"
 
 type ToogleProps ={
     label:string;
     valBoolean:boolean
 }
 export const ButtonToogle:FC<ToogleProps> =({label,valBoolean})=>{
-const [isToggled,setIsToogled]=useToogle(valBoolean);
+// const [isToggled,setIsToogled]=useToogle(valBoolean);
+//хук через редусер
+const [isToggled,setIsToogled]=useToogle(valBoolean)
     return (
         <div>
             <span>{label}</span>
