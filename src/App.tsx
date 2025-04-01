@@ -1,5 +1,5 @@
 import "./App.css";
-import { TestChangesProps } from "./CastomHooks";
+import { PointField } from "./Paint";
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { TestChangesProps } from "./CastomHooks";
 function App() {
   return (
     <div>
-      <TestChangesProps initcount={0} inittext="Нет текста" />
+      <PointField />
     </div>
   );
 }

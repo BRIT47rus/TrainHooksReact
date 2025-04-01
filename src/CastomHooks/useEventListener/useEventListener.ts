@@ -1,5 +1,5 @@
 import { RefObject, useEffect, useRef } from "react"
-export type EventHandler = Event | MouseEvent
+export type EventHandler = MouseEvent|Event  
 type SuportedElement = Window | HTMLElement | Document | null;
 type HandlerType = (e:EventHandler ) => void
 
