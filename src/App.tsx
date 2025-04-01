@@ -1,5 +1,6 @@
 import "./App.css";
-import { PointField } from "./Paint";
+import { InputsLocaleStorage } from "./inputsLocaleStorage/inputsLocaleStorage";
+
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +12,7 @@ import { PointField } from "./Paint";
 function App() {
   return (
     <div>
-      <PointField />
+<InputsLocaleStorage/>
     </div>
   );
 }

@@ -1,17 +1,19 @@
-import { useState } from "react"
+import { SetStateAction, useState } from "react"
 
-const isFunction = (check: any) => typeof isFunction === 'function';
+const isFunction = (check: any): boolean => typeof check === 'function';
 
-export const useLocaleStorage = (key: string, initialValue: any) => {
-    const [storageValue, setStorageValue] = useState(() => {
+export const useLocaleStorage = <T>(key: string, initialValue: T): [T, React.Dispatch<React.SetStateAction<T>>, () => void] => {
+    const [storageValue, setStorageValue] = useState<T>(() => {
         try {
             const item = window.localStorage.getItem(key);
             if (item) {
-                return JSON.parse(key)
+                return JSON.parse(item) as T
             }
-            const evaluated = isFunction(initialValue) ? initialValue() : initialValue;
+            const evaluated = isFunction(initialValue)
+                ? (initialValue as () => T)()
+                : initialValue;
             window.localStorage.setItem(key, JSON.stringify(evaluated))
-
+            return evaluated;
 
         } catch (e) {
             console.log('ошибка ');
@@ -19,9 +21,11 @@ export const useLocaleStorage = (key: string, initialValue: any) => {
         }
 
     })
-    const setValue = (newValue: any) => {
+    const setValue = (newValue: SetStateAction<T>) => {
         try {
-            const evaluated = isFunction(newValue) ? initialValue() : newValue;
+            const evaluated = isFunction(newValue)
+                ? (newValue as () => T)()
+                : newValue;
             window.localStorage.setItem(key, JSON.stringify(evaluated));
             setStorageValue(evaluated)
         } catch (e) {
@@ -29,5 +33,13 @@ export const useLocaleStorage = (key: string, initialValue: any) => {
 
         }
     }
-    return [storageValue, setValue]
+    const removeValue = () => {
+        try {
+            window.localStorage.removeItem(key);
+            setStorageValue(initialValue); // или null, если нужно
+        } catch (e) {
+            console.error("Ошибка при удалении из localStorage:", e);
+        }
+    };
+    return [storageValue, setValue, removeValue]
 }
