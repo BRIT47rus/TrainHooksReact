@@ -1,6 +1,7 @@
-import { EventHandler, MouseEvent, useEffect, useState } from "react"
+import {  useEffect, useState } from "react"
 import { useDebaunce, useEventListener } from "../../CastomHooks"
 import { Point } from "../Point/Point"
+import { useThrotle } from "../../CastomHooks/useThrotle/useThrotle"
 
 type PointType={
     x:number,
@@ -13,9 +14,11 @@ const INITIAL_POINT:PointType={
 export const PointField = ()=>{
     const [latsPoint,setLastPoint] =useState<PointType>(INITIAL_POINT)
     const debauced = useDebaunce(latsPoint,300)
+    const throtyeld= useThrotle(latsPoint,300)
 
     const [pathLast,setPathLast]=useState<PointType[]>([]);
     const [pathDebaunced,setDebauncedPath]=useState<PointType[]>([])
+    const [pathThrotle,setpathThrotle]=useState<PointType[]>([])
 
     useEventListener('mousemove',(event)=>{
         const {clientX,clientY}=event;
@@ -33,6 +36,13 @@ export const PointField = ()=>{
         ))
     },[debauced])
 
+
+    useEffect(()=>{
+        setpathThrotle((array)=>(
+            [...array,throtyeld]
+        ))
+    },[throtyeld])
+
     return(
         <>
         {pathLast && pathLast.map((dot,index)=>(
@@ -40,6 +50,9 @@ export const PointField = ()=>{
         ))}
         {pathDebaunced && pathDebaunced.map((dot,index)=>(
                 <Point color="red" left={dot.x} top={dot.y} key={index}/>
+        ))}
+        {pathThrotle && pathThrotle.map((dot,index)=>(
+                <Point color="green" left={dot.x+10} top={dot.y+10} key={index}/>
         ))}
         
         </>
