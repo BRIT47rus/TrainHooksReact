@@ -1,5 +1,5 @@
 import './App.css';
-import { AsyncComponent } from './AsyncComponent';
+import { RatingCompare } from './RatingCompare';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { AsyncComponent } from './AsyncComponent';
 function App() {
     return (
         <div>
-            <AsyncComponent />
+            <RatingCompare />
         </div>
     );
 }

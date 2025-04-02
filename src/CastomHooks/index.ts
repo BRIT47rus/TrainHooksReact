@@ -1,3 +1,4 @@
+import { usePrev } from './usePrev/usePrev';
 import { useAsync } from './useAsync/useAsync';
 import { useWindowSize } from './useWindowSize/useWindowSize';
 import { useDebaunce } from './useDebaunce/useDebaunce';
@@ -12,4 +13,5 @@ export {
     useToogle,
     useEventListener,
     useAsync,
+    usePrev,
 };
