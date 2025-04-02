@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState } from 'react';
 
 // Общий тип для функции преобразования
 type StringTransformFunction = (value: string) => string;

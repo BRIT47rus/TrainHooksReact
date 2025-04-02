@@ -1,28 +1,30 @@
-import { RefObject, useEffect, useRef } from "react"
-export type EventHandler = MouseEvent|Event  
+import { RefObject, useEffect, useRef } from 'react';
+export type EventHandler = any;
 type SuportedElement = Window | HTMLElement | Document | null;
-type HandlerType = (e:EventHandler ) => void
+type HandlerType = (e: EventHandler) => void;
 
-export const useEventListener = (eventName: string, handler: HandlerType, element: SuportedElement = window) => {
+export const useEventListener = (
+    eventName: string,
+    handler: HandlerType,
+    element: SuportedElement = window
+) => {
     const savedHandler: RefObject<HandlerType | undefined> = useRef(undefined);
     useEffect(() => {
         savedHandler.current = handler;
-    }, [handler])
+    }, [handler]);
     useEffect(() => {
         const isSupportedElement = element?.addEventListener;
         if (!isSupportedElement) {
-            throw new Error('Element is not supported listen' + element)
+            throw new Error('Element is not supported listen' + element);
         }
         const evenetListener = (event: EventHandler) => {
             if (savedHandler.current) {
-                savedHandler?.current(event)
+                savedHandler?.current(event);
             }
-        }
-        element.addEventListener(eventName, evenetListener)
+        };
+        element.addEventListener(eventName, evenetListener);
         return () => {
-            element.removeEventListener(eventName, evenetListener)
-
-        }
-    }, [element, eventName])
-
-}
+            element.removeEventListener(eventName, evenetListener);
+        };
+    }, [element, eventName]);
+};
