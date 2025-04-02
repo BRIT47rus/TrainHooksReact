@@ -1,5 +1,5 @@
 import './App.css';
-import { RatingCompare } from './RatingCompare';
+import ValueTracker from './ValueTracker/ValueTracker';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { RatingCompare } from './RatingCompare';
 function App() {
     return (
         <div>
-            <RatingCompare />
+            <ValueTracker />
         </div>
     );
 }

@@ -1,3 +1,4 @@
+import { useHistory } from './useHistory/useHistory';
 import { usePrev } from './usePrev/usePrev';
 import { useAsync } from './useAsync/useAsync';
 import { useWindowSize } from './useWindowSize/useWindowSize';
@@ -14,4 +15,5 @@ export {
     useEventListener,
     useAsync,
     usePrev,
+    useHistory,
 };
