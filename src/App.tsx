@@ -1,6 +1,5 @@
-import "./App.css";
-import { InputsLocaleStorage } from "./inputsLocaleStorage/inputsLocaleStorage";
-
+import './App.css';
+import { BoxResize } from './DashedBox';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -10,11 +9,11 @@ import { InputsLocaleStorage } from "./inputsLocaleStorage/inputsLocaleStorage";
 //   {id:5,name:'ej'},
 // ]
 function App() {
-  return (
-    <div>
-<InputsLocaleStorage/>
-    </div>
-  );
+    return (
+        <div>
+            <BoxResize />
+        </div>
+    );
 }
 
 export default App;
