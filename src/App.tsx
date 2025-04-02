@@ -1,5 +1,5 @@
 import './App.css';
-import { BoxResize } from './DashedBox';
+import { AsyncComponent } from './AsyncComponent';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { BoxResize } from './DashedBox';
 function App() {
     return (
         <div>
-            <BoxResize />
+            <AsyncComponent />
         </div>
     );
 }

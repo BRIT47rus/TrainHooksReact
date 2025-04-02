@@ -1,3 +1,4 @@
+import { useAsync } from './useAsync/useAsync';
 import { useWindowSize } from './useWindowSize/useWindowSize';
 import { useDebaunce } from './useDebaunce/useDebaunce';
 import { TestChangesProps } from './useWhatCausedRender/TestChangesProps';
@@ -10,4 +11,5 @@ export {
     TestChangesProps,
     useToogle,
     useEventListener,
+    useAsync,
 };
