@@ -1,3 +1,4 @@
+import { useElementSize } from './useElementSize/useElementSize';
 import { useHistory } from './useHistory/useHistory';
 import { usePrev } from './usePrev/usePrev';
 import { useAsync } from './useAsync/useAsync';
@@ -8,6 +9,7 @@ import { useEventListener } from './useEventListener/useEventListener';
 import { useToogle } from './useToogle/useToogle';
 
 export {
+    useElementSize,
     useWindowSize,
     useDebaunce,
     TestChangesProps,

@@ -11,7 +11,7 @@ const INIT_SIZE = {
     height: 0,
 };
 
-export const useElementSize = (itemRef: RefObject<HTMLElement>) => {
+export const useElementSize = (itemRef: RefObject<HTMLElement | null>) => {
     const [size, setSize] = useState<SizeType>(INIT_SIZE);
 
     const unpdateSizeElement = useCallback(() => {

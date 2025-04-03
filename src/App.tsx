@@ -1,5 +1,5 @@
 import './App.css';
-import ValueTracker from './ValueTracker/ValueTracker';
+import { ResizeElements } from './ResizeElements/ResizeElements/ResizeElements';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import ValueTracker from './ValueTracker/ValueTracker';
 function App() {
     return (
         <div>
-            <ValueTracker />
+            <ResizeElements />
         </div>
     );
 }
