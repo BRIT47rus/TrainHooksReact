@@ -10,7 +10,7 @@ import { GenerateBoxes } from './GenerateBoxes';
 // ]
 function App() {
     return (
-        <div>
+        <div className="App">
             <GenerateBoxes />
         </div>
     );

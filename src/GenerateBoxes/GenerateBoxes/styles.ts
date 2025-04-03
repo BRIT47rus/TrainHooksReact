@@ -1,9 +1,18 @@
 import './box.css';
+
+const boxRound = `@keyframes boxRound {
+    0% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}`;
 export const styles = {
     component: {
         display: 'flex',
-        width: 1200,
-        height: 1200,
+        width: '100%',
+        height: '100%',
         position: 'relative',
     },
     box: (

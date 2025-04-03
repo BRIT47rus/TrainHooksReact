@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react';
 import { Box } from '../Box/Box';
-import { styles } from './styles';
+import './box.css';
 import { useElementSize, useInterval } from '../../CastomHooks';
 import { v4 } from 'uuid';
 import { generateColor } from './generateColor';
@@ -39,17 +39,25 @@ export const GenerateBoxes = () => {
         restart();
     };
     return (
-        <div style={styles.component}>
-            {isRunning ? (
-                <button onClick={stopSpawning}>Stop</button>
-            ) : (
-                <button onClick={restartSpawning}>Restart</button>
-            )}
-
-            <div className="spawnArea" ref={refBox}>
+        <div
+            style={{
+                width: '1200px',
+                height: '100vh',
+                border: '1px dashed gray',
+            }}
+            ref={refBox}
+        >
+            <div className="spawnArea">
                 {arrayBox.map((box) => (
                     <Box key={box.id} {...box} />
                 ))}
+            </div>
+            <div>
+                {isRunning ? (
+                    <button onClick={stopSpawning}>Stop</button>
+                ) : (
+                    <button onClick={restartSpawning}>Restart</button>
+                )}
             </div>
         </div>
     );

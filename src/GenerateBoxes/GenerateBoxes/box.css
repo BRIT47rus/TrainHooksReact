@@ -6,6 +6,6 @@
         transform: rotate(360deg);
     }
 }
-.box {
-    margin: 20px;
+.spawnArea {
+    width: 100%;
 }
