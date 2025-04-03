@@ -1,5 +1,5 @@
 import './App.css';
-import { ResizeElements } from './ResizeElements/ResizeElements/ResizeElements';
+import { GenerateBoxes } from './GenerateBoxes';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { ResizeElements } from './ResizeElements/ResizeElements/ResizeElements';
 function App() {
     return (
         <div>
-            <ResizeElements />
+            <GenerateBoxes />
         </div>
     );
 }
