@@ -1,5 +1,5 @@
 import './App.css';
-import { GameBox } from './GameCatchBox';
+import { CatVsDog } from './CatVsDog';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { GameBox } from './GameCatchBox';
 function App() {
     return (
         <div className="App">
-            <GameBox />
+            <CatVsDog />
         </div>
     );
 }
