@@ -1,7 +1,7 @@
 import { RefObject, useCallback, useEffect, useState } from 'react';
 import { useEventListener } from '../useEventListener/useEventListener';
 
-type SizeType = {
+export type SizeType = {
     width: number;
     height: number;
 };

@@ -1,5 +1,5 @@
 import './App.css';
-import { GenerateBoxes } from './GenerateBoxes';
+import { GameBox } from './GameCatchBox';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { GenerateBoxes } from './GenerateBoxes';
 function App() {
     return (
         <div className="App">
-            <GenerateBoxes />
+            <GameBox />
         </div>
     );
 }

@@ -36,5 +36,5 @@ export const useTimeout = (callback: () => void, timeout: number) => {
         }
     }, [timeoutID]);
 
-    return {};
+    return { isRunning, start, stop };
 };

@@ -8,8 +8,10 @@ import { TestChangesProps } from './useWhatCausedRender/TestChangesProps';
 import { useEventListener } from './useEventListener/useEventListener';
 import { useToogle } from './useToogle/useToogle';
 import { useInterval } from './useInterval/useInterval';
+import { useTimeout } from './useTimeout/useTimeout';
 
 export {
+    useTimeout,
     useInterval,
     useElementSize,
     useWindowSize,
