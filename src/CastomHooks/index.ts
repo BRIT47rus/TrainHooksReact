@@ -9,8 +9,10 @@ import { useEventListener } from './useEventListener/useEventListener';
 import { useToogle } from './useToogle/useToogle';
 import { useInterval } from './useInterval/useInterval';
 import { useTimeout } from './useTimeout/useTimeout';
+import { useHovered } from './useHovered/useHovered';
 
 export {
+    useHovered,
     useTimeout,
     useInterval,
     useElementSize,

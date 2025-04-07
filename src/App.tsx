@@ -1,5 +1,5 @@
 import './App.css';
-import { CatVsDog } from './CatVsDog';
+import { Kolobok } from './Kolobok';
 
 // const items = [
 //   {id:1,name:'vova'},
@@ -11,7 +11,7 @@ import { CatVsDog } from './CatVsDog';
 function App() {
     return (
         <div className="App">
-            <CatVsDog />
+            <Kolobok />
         </div>
     );
 }
