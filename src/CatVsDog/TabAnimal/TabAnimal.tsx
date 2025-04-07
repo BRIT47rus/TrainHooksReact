@@ -1,26 +1,33 @@
-type TabProps = {
-    who: string;
-    selected: boolean;
-    handleClick: () => void;
+import { CSSProperties } from 'react';
+
+type TabAnimalType = {
+    select: boolean;
+    handleClickTab: () => void;
+    textName: string;
 };
 
-export const TabAnimal = ({ who, selected, handleClick }: TabProps) => {
-    const handleTabClick = () => {
-        if (handleClick) {
-            handleClick();
-        }
+export const TabAnimal = ({
+    select,
+    handleClickTab,
+    textName,
+}: TabAnimalType) => {
+    const styleTab: CSSProperties = {
+        padding: '20px 40px',
+        margin: 20,
+        backgroundColor: select ? 'red' : 'blue',
+        borderBottom: select ? 'blue' : 'red',
     };
 
     return (
         <div
             style={{
-                padding: '40px 80px',
-                borderBottom: '1px solid blue',
-                color: selected ? 'red' : 'blue',
+                display: 'flex',
+                flexDirection: 'row',
             }}
-            onClick={handleTabClick}
         >
-            <h1>{who}</h1>
+            <div style={styleTab} onClick={handleClickTab}>
+                {textName}
+            </div>
         </div>
     );
 };

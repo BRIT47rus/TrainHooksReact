@@ -1,54 +1,54 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { TabAnimal } from '../TabAnimal/TabAnimal';
+import { PictureAnimal } from '../PictureAnimal/PictureAnimal';
 import {
     asyncSelectCat,
     asyncSelectDog,
 } from '../asyncSelectAnimal/asyncSelectAnimal';
-import { PictureAnimal } from '../PictureAnimal/PictureAnimal';
 
-const catDog = {
-    CAT: 'cat',
-    DOG: 'dog',
-};
-
-type CatDogType = 'cat' | 'dog';
+enum CvDType {
+    CAT = 'cat',
+    DOG = 'dog',
+}
 
 export const CatVsDog = () => {
-    const [tab, setTab] = useState(catDog.CAT);
+    const [tab, setTab] = useState(CvDType.CAT);
 
-    const showCat = () => {
-        setTab(catDog.CAT);
+    const handleClickTabCat = () => {
+        setTab(CvDType.CAT);
     };
-    const showDog = () => {
-        setTab(catDog.DOG);
+
+    const handleClickTabDog = () => {
+        setTab(CvDType.DOG);
     };
 
     return (
         <>
-            <div>
-                <TabAnimal
-                    who={'CAT'}
-                    selected={tab === catDog.CAT}
-                    handleClick={showCat}
-                />
-                <TabAnimal
-                    who={'DOG'}
-                    selected={tab === catDog.DOG}
-                    handleClick={showDog}
-                />
-            </div>
-            {tab === catDog.CAT ? (
+            <h1>Киски против собак</h1>
+            <TabAnimal
+                textName="CAT"
+                handleClickTab={handleClickTabCat}
+                select={tab === CvDType.CAT}
+            />
+            <TabAnimal
+                textName="DOG"
+                handleClickTab={handleClickTabDog}
+                select={tab === CvDType.DOG}
+            />
+            {tab === CvDType.CAT ? (
                 <PictureAnimal
-                    asyncGetURl={asyncSelectCat}
-                    key={'animal_cat'}
-                    alt="кот"
+                    key="animal_cat"
+                    alt="CAT"
+                    asyncGetAnimal={asyncSelectCat}
+                />
+            ) : tab === CvDType.DOG ? (
+                <PictureAnimal
+                    key="animal_dog"
+                    alt="DOG"
+                    asyncGetAnimal={asyncSelectDog}
                 />
             ) : (
-                <PictureAnimal
-                    asyncGetURl={asyncSelectDog}
-                    key={'animal_dog'}
-                    alt="собака"
-                />
+                <p>Запрос не найден</p>
             )}
         </>
     );
